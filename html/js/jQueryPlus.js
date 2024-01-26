@@ -22,8 +22,12 @@ class JQueryPlus {
      * @returns {Promise<any>}
      */
     async get(url) {
+        let fixedURL = url
+        if (window.location.pathname != "/" && !url.startsWith("http")) {
+            fixedURL = url.replace("/", window.location.pathname)
+        }
         return new Promise((res, rej) => {
-            $.get(url, (data) => {
+            $.get(fixedURL, (data) => {
                 res(data)
             }).fail((err) => {
                 rej(err)
