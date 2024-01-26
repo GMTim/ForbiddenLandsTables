@@ -1,28 +1,95 @@
+:root {
+    --darker-background: #23272b;
+}
+
 body {
     background-color: #343a40;
-    /* Dark theme background color */
     color: #fff;
-    /* Light text color for dark background */
     min-height: 100vh;
-    /* Full viewport height */
     display: flex;
     flex-direction: column;
 }
 
 .content-area {
     flex: 1;
-    /* Expand to take up available space */
     padding: 20px;
-    /* Padding for the content */
 }
 
 .button-group {
     padding: 20px;
-    /* Padding around the buttons */
-    background-color: #23272b;
-    /* Slightly lighter dark shade for contrast */
+    background-color: var(--darker-background);
 }
 
 .bg-dark {
-    background-color: #23272b!important;
+    background-color: var(--darker-background)!important;
+}
+
+.btn-custom-primary {
+    background-color: #5568ff;
+    color: #fff; 
+    border-color: #4056df;
+}
+
+.btn-custom-secondary {
+    background-color: #6c757d;
+    color: #fff; 
+    border-color: #565e64; 
+}
+
+.btn-custom-success {
+    background-color: #28a745; 
+    color: #fff; 
+    border-color: #1e7e34; 
+}
+
+.btn-custom-danger {
+    background-color: #dc3545;
+    color: #fff; 
+    border-color: #bd2130;
+}
+
+.btn-custom-warning {
+    background-color: #ffc107;
+    color: #343a40;
+    border-color: #d39e00; 
+}
+
+.btn-custom-info {
+    background-color: #17a2b8; 
+    color: #fff; 
+    border-color: #117a8b;
+}
+
+.btn-custom-light {
+    background-color: #f8f9fa;
+    color: #343a40; 
+    border-color: #dae0e5;
+}
+
+.btn-custom-dark {
+    background-color: #343a40;
+    color: #fff;
+    border-color: #1d2124; 
+}
+
+.btn-custom-primary:hover,
+.btn-custom-secondary:hover,
+.btn-custom-success:hover,
+.btn-custom-danger:hover,
+.btn-custom-warning:hover,
+.btn-custom-info:hover,
+.btn-custom-light:hover,
+.btn-custom-dark:hover {
+    opacity: 0.85;
+}
+
+.btn-custom-primary:focus, .btn-custom-primary:active,
+.btn-custom-secondary:focus, .btn-custom-secondary:active,
+.btn-custom-success:focus, .btn-custom-success:active,
+.btn-custom-danger:focus, .btn-custom-danger:active,
+.btn-custom-warning:focus, .btn-custom-warning:active,
+.btn-custom-info:focus, .btn-custom-info:active,
+.btn-custom-light:focus, .btn-custom-light:active,
+.btn-custom-dark:focus, .btn-custom-dark:active {
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
 }
