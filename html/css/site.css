@@ -22,3 +22,7 @@ body {
     background-color: #23272b;
     /* Slightly lighter dark shade for contrast */
 }
+
+.bg-dark {
+    background-color: #23272b!important;
+}
