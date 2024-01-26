@@ -1,0 +1,24 @@
+body {
+    background-color: #343a40;
+    /* Dark theme background color */
+    color: #fff;
+    /* Light text color for dark background */
+    min-height: 100vh;
+    /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+.content-area {
+    flex: 1;
+    /* Expand to take up available space */
+    padding: 20px;
+    /* Padding for the content */
+}
+
+.button-group {
+    padding: 20px;
+    /* Padding around the buttons */
+    background-color: #23272b;
+    /* Slightly lighter dark shade for contrast */
+}
