@@ -20,18 +20,22 @@ class Operator {
     /** @private */
     async loadOracle() {
         await this.replaceButtons("oracle/buttons.html")
-        $$.dataId("yesno").on("click", async (e) => {
-            e.preventDefault()
-            /** @type {Models.RandomResponse} */
-            const entry = await $$.getJSON(`/api/oracle/yesno`)
-            this.content.prepend(`${entry.roll} - ${entry.entry.value}<br />`)
-        })
+        this.bindButton("yesno", "/api/oracle/yesno")
+        this.bindButton("helpHaz", "/api/oracle/helpHaz")
     }
     async replaceButtons(file) {
         const buttons = await $$.get(`/src/${file}`)
         $('#buttons').children().remove()
         $('#buttons').html(buttons)
         layout.adjust()
+    }
+    async bindButton(target, url) {
+        $$.dataId(target).on("click", async (e) => {
+            e.preventDefault()
+            /** @type {Models.RandomResponse} */
+            const entry = await $$.getJSON(url)
+            this.content.prepend(`${entry.roll} - ${entry.entry.value}<br />`)
+        })
     }
 }
 

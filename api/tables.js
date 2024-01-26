@@ -1,8 +1,15 @@
 export default {
     card: {
-        suit: "sorb"
+        redBlack: "sorb",
+        suit: "sos"
     },
     oracle: {
+        genEncClubs: "sogec",
+        genEncDiamonds: "soged",
+        genEncHearts: "sogeh",
+        genEncSpades: "soges",
+        helpHazBlack: "soohb",
+        helpHazRed: "soohr",
         yesNoBlack: "sooynb",
         yesNoRed: "sooynr"
     }
