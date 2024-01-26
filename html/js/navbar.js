@@ -3,8 +3,6 @@
  * @param {JQuery<HTMLElement>} selectedNavItem
  */
 
-function DI(item) { return item.attr("data-id") }
-
 class NavController {
     /** @type {JQuery<HTMLElement>} */
     navlinks
@@ -25,7 +23,7 @@ class NavController {
         this.navlinks.on("click", (e) => {
             e.preventDefault()
             let target = $(e.target)
-            if (DI(this.active) == DI(target)) { return }
+            if (this.active.dataId() == target.dataId()) { return }
             this.navlinks.removeClass("active")
             target.addClass("active")
             this.active = target

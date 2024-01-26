@@ -10,9 +10,10 @@ const yesno = async (req, res) => {
     const redOrBlack = await random(tables.card.suit)
     let result
     switch (redOrBlack.roll) {
-        case 1: result = await random(tables.oracle.yesNoRed)
-        case 2: result = await random(tables.oracle.yesNoBlack)
+        case 1: result = await random(tables.oracle.yesNoRed); break;
+        case 2: result = await random(tables.oracle.yesNoBlack); break;
     }
+    result.roll = `${redOrBlack.entry.value}:${result.roll}`
     res.send(result)
 }
 
