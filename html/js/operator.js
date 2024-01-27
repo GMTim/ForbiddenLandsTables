@@ -22,6 +22,7 @@ class Operator {
         await this.replaceButtons("oracle/buttons.html")
         this.bindButton("yesno", "/api/oracle/yesno")
         this.bindButton("helpHaz", "/api/oracle/helpHaz")
+        this.bindButton("theme", "/api/oracle/theme")
     }
     async replaceButtons(file) {
         const buttons = await $$.get(`/src/${file}`)

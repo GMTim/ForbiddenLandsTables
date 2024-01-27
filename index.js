@@ -7,6 +7,7 @@ import * as apis from "./api/apis.js"
 const app = express()
 app.use("/", express.static("html"))
 app.use("/api/oracle/helpHaz", apis.oracle.helpHaz)
+app.use("/api/oracle/theme", apis.oracle.theme)
 app.use("/api/oracle/yesno", apis.oracle.yesno)
 
 app.listen(options.constant.port, () => {
