@@ -1,5 +1,7 @@
 :root {
     --darker-background: #23272b;
+    --card-red: #cc5555;
+    --card-black: #111111;
 }
 
 body {
@@ -116,3 +118,44 @@ body {
     color: white;
     text-decoration: none;
   }
+
+  .container {
+    position: relative;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 5px;
+  }
+  
+  .number {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--darker-background);
+    color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    font-weight: bold;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+  }
+  
+  .text {
+    background-color: #505050;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .red {
+    background-color: var(--card-red);
+  }
+
+  .black {
+    background-color: var(--card-black);
+  }
+  

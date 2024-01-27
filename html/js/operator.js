@@ -34,7 +34,16 @@ class Operator {
             e.preventDefault()
             /** @type {Models.RandomResponse} */
             const entry = await $$.getJSON(url)
-            this.content.prepend(`${entry.roll} - ${entry.entry.value}<br />`)
+            const ele = $(await $$.get("/src/result.html"))
+            ele.find(".number").text(entry.roll)
+            switch(entry.roll[0]) {
+                case "♦":
+                case "♥": ele.find(".number").addClass("red"); break
+                case "♣":
+                case "♠": ele.find(".number").addClass("black"); break
+            }
+            ele.find(".text").text(entry.entry.value)
+            this.content.prepend(ele)//`${entry.roll} - ${entry.entry.value}<br />`)
         })
     }
 }
