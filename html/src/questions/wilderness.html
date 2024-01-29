@@ -1,0 +1,22 @@
+<dialog id="wildernessDialog" class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Wilderness Choice</h5>
+            <button type="button" class="btn-close btn-custom-secondary btn-choice" id="closeDialog" aria-label="Close" value="none">Ｘ</button>
+        </div>
+        <div class="modal-body">
+            <button class="btn btn-custom-secondary btn-choice" value="mountains">Hills & Mountains</button>
+            <button class="btn btn-custom-secondary btn-choice" value="forests">Plains & Forests</button>
+            <button class="btn btn-custom-secondary btn-choice" value="marshes">Marshes & Quagmires</button>
+            <button class="btn btn-custom-secondary btn-choice" value="waterways">Waterways & Shorelines</button>
+        </div>
+    </div>
+    <script type="application/json" id="json">
+        {
+            "mountains": "/api/oracle/wilderness/mountains",
+            "forests": "/api/oracle/wilderness/forests",
+            "marshes": "/api/oracle/wilderness/marshes",
+            "waterways": "/api/oracle/wilderness/waterways"
+        }
+    </script>
+</dialog>

@@ -16,6 +16,12 @@ export default {
         themeDiamonds: "sootd",
         themeHearts: "sooth",
         themeSpades: "soots",
+        wilderness: {
+            forests: "soowf",
+            mountains: "soowm",
+            quagmires: "soowq",
+            waterways: "sooww"
+        },
         yesNoBlack: "sooynb",
         yesNoRed: "sooynr"
     }

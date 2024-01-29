@@ -2,10 +2,19 @@
     --darker-background: #23272b;
     --card-red: #cc5555;
     --card-black: #111111;
+    --main-background: #343a40;
+}
+
+dialog {
+    background-color: var(--main-background);
+    color: #fff;
+}
+.modal-content {
+    background-color: var(--darker-background);
 }
 
 body {
-    background-color: #343a40;
+    background-color: var(--main-background);
     color: #fff;
     min-height: 100vh;
     display: flex;
@@ -159,3 +168,6 @@ body {
     background-color: var(--card-black);
   }
   
+  .btn-choice {
+    margin: 5px;
+  }
