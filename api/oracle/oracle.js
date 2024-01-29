@@ -1,6 +1,7 @@
 import helpHaz from "./helpHaz.js"
+import kin from "./kin.js"
 import theme from "./theme.js"
 import wilderness from "./wilderness.js"
 import yesno from "./yesno.js"
 
-export { helpHaz, theme, wilderness, yesno }
+export { helpHaz, kin, theme, wilderness, yesno }

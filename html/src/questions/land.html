@@ -1,0 +1,20 @@
+<dialog id="landDialog" class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Land Choice</h5>
+            <button type="button" class="btn-close btn-custom-secondary btn-choice" id="closeDialog" aria-label="Close" value="none">Ｘ</button>
+        </div>
+        <div class="modal-body">
+            <button class="btn btn-custom-secondary btn-choice" value="ravenlands">Ravenlands</button>
+            <button class="btn btn-custom-secondary btn-choice" value="bitterReach">Bitter Reach</button>
+            <button class="btn btn-custom-secondary btn-choice" value="aslene">Aslene</button>
+        </div>
+    </div>
+    <script type="application/json" id="json">
+        {
+            "ravenlands": "/api/oracle/kin/ravenlands",
+            "bitterReach": "/api/oracle/kin/bitterReach",
+            "aslene": "/api/oracle/kin/aslene"
+        }
+    </script>
+</dialog>

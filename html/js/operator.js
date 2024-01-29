@@ -14,10 +14,23 @@ import layout from './layout.js'
 
 const handlers = {
     /**
+     * @param {JQuery<HTMLElement>} ele 
+     * @param {string} label 
+     */
+    setLabel: function(ele, label) {
+        if (label) {
+            const l = ele.find(".label")
+            if (!l) { return }
+            l.removeClass("d-none")
+            l.text(label)
+        }
+    },
+    /**
      * @param {string} url 
+     * @param {string} label 
      * @returns {eventHandler}
      */
-    chooseCard: function (url) {
+    chooseCard: function (url, label) {
         return async () => {
             /** @type {Models.RandomResponse} */
             const entry = await $$.getJSON(url)
@@ -30,6 +43,7 @@ const handlers = {
                 case "♠": ele.find(".number").addClass("black"); break
             }
             ele.find(".text").text(entry.entry.value)
+            this.setLabel(ele, label)
             return ele
         }
     }
@@ -53,10 +67,11 @@ class Operator {
     /** @private */
     async loadOracle() {
         await this.replaceButtons("oracle/buttons.html")
-        this.bindButton("yesno", handlers.chooseCard("/api/oracle/yesno"))
-        this.bindButton("helpHaz", handlers.chooseCard("/api/oracle/helpHaz"))
-        this.bindButton("theme", handlers.chooseCard("/api/oracle/theme"))
-        this.bindDialogButton("wilderness", "/src/questions/wilderness.html", handlers.chooseCard.bind(handlers))
+        this.bindButton("yesno", handlers.chooseCard("/api/oracle/yesno", "Yes / No"))
+        this.bindButton("helpHaz", handlers.chooseCard("/api/oracle/helpHaz", "Helpful / Hazardous"))
+        this.bindButton("theme", handlers.chooseCard("/api/oracle/theme", "Theme"))
+        this.bindDialogButton("wilderness", "/src/questions/wilderness.html", "Wilderness", handlers.chooseCard.bind(handlers))
+        this.bindDialogButton("kin", "/src/questions/land.html", "Kin", handlers.chooseCard.bind(handlers))
     }
     async replaceButtons(file) {
         const buttons = await $$.get(`/src/${file}`)
@@ -74,7 +89,7 @@ class Operator {
             this.content.prepend(await handler())
         })
     }
-    async bindDialogButton(target, durl, handler) {
+    async bindDialogButton(target, durl, label, handler) {
         $$.dataId(target).on("click", async (e) => {
             e.preventDefault()
             /** @type { JQuery<HTMLElement> } */
@@ -85,9 +100,10 @@ class Operator {
                 e.preventDefault()
                 dialog[0].close()
                 dialog.remove()
+                let btnLabel = $(e.target).text()
                 let value = $(e.target).val()
                 if (value && Object.keys(json).includes(value)) {
-                    let cb = handler(json[value])
+                    let cb = handler(json[value], `${label} - ${btnLabel}`)
                     this.content.prepend(await cb())
                 }
             })

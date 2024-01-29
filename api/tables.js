@@ -12,6 +12,12 @@ export default {
     oracle: {
         helpHazBlack: "soohb",
         helpHazRed: "soohr",
+        kin: {
+            aslene: "sooka",
+            bitterReach: "sookb",
+            ravenlandsBlack: "sookrb",
+            ravenlandsRed: "sookrr"
+        },
         themeClubs: "sootc",
         themeDiamonds: "sootd",
         themeHearts: "sooth",
