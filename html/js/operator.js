@@ -75,6 +75,8 @@ class Operator {
         this.bindDialogButton("wilderness", "/src/questions/wilderness.html", "Wilderness", handlers.chooseCard.bind(handlers))
         this.bindDialogButton("kin", "/src/questions/land.html", "Kin", handlers.chooseCard.bind(handlers))
         this.bindDialogButton("kinNames", "/src/questions/kin.html", "Kin Names", handlers.chooseCard.bind(handlers))
+        this.bindButton("npcThemes", handlers.chooseCard("/api/oracle/npcThemes", "NPC Themes"))
+        this.bindButton("communityThemes", handlers.chooseCard("/api/oracle/communityThemes", "Community Themes"))
     }
     async replaceButtons(file) {
         const buttons = await $$.get(`/src/${file}`)

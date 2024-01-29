@@ -36,6 +36,12 @@ export default {
             wolfkinFemale: "sooknwf",
             wolfkinMale: "sooknwm"
         },
+        npcThemes: {
+            clubs: "soonpctc",
+            diamonds: "soonpctd",
+            hearts: "soonpcth",
+            spades: "soonpcts"
+        },
         themeClubs: "sootc",
         themeDiamonds: "sootd",
         themeHearts: "sooth",
