@@ -11,6 +11,7 @@ app.use("/api/oracle/theme", apis.oracle.theme)
 app.use("/api/oracle/yesno", apis.oracle.yesno)
 app.use("/api/oracle/wilderness/*", apis.oracle.wilderness)
 app.use("/api/oracle/kin/*", apis.oracle.kin)
+app.use("/api/oracle/kinNames/*", apis.oracle.kinNames)
 
 app.listen(options.constant.port, () => {
     console.log(`Listening at http://localhost:${options.constant.port}`)

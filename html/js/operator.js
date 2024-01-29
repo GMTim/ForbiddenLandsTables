@@ -16,12 +16,14 @@ const handlers = {
     /**
      * @param {JQuery<HTMLElement>} ele 
      * @param {string} label 
+     * @param {Object} entry 
      */
-    setLabel: function(ele, label) {
+    setLabel: function(ele, label, entry) {
         if (label) {
             const l = ele.find(".label")
             if (!l) { return }
             l.removeClass("d-none")
+            if (entry.label) { label = `${label} - ${entry.label}` }
             l.text(label)
         }
     },
@@ -43,7 +45,7 @@ const handlers = {
                 case "♠": ele.find(".number").addClass("black"); break
             }
             ele.find(".text").text(entry.entry.value)
-            this.setLabel(ele, label)
+            this.setLabel(ele, label, entry)
             return ele
         }
     }
@@ -72,6 +74,7 @@ class Operator {
         this.bindButton("theme", handlers.chooseCard("/api/oracle/theme", "Theme"))
         this.bindDialogButton("wilderness", "/src/questions/wilderness.html", "Wilderness", handlers.chooseCard.bind(handlers))
         this.bindDialogButton("kin", "/src/questions/land.html", "Kin", handlers.chooseCard.bind(handlers))
+        this.bindDialogButton("kinNames", "/src/questions/kin.html", "Kin Names", handlers.chooseCard.bind(handlers))
     }
     async replaceButtons(file) {
         const buttons = await $$.get(`/src/${file}`)

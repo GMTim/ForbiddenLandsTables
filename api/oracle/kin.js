@@ -20,6 +20,7 @@ const wilderness = async (req, res) => {
                 case 3:
                 case 4: result = await random(tables.oracle.kin.ravenlandsBlack); break;
             }
+            break
         case "bitterReach": result = await random(tables.oracle.kin.bitterReach); break;
         case "aslene": result = await random(tables.oracle.kin.aslene); break;
         default: res.status(404).send({error: "Land Not Found"}); return;

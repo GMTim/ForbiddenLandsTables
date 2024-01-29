@@ -1,0 +1,30 @@
+<dialog id="kinDialog" class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Kin Choice</h5>
+            <button type="button" class="btn-close btn-custom-secondary btn-choice" id="closeDialog" aria-label="Close" value="none">Ｘ</button>
+        </div>
+        <div class="modal-body">
+            <button class="btn btn-custom-secondary btn-choice" value="alderlander">Alderlander</button>
+            <button class="btn btn-custom-secondary btn-choice" value="aslene">Aslene</button>
+            <button class="btn btn-custom-secondary btn-choice" value="dwarf">Dwarf</button>
+            <button class="btn btn-custom-secondary btn-choice" value="elf">Elf</button>
+            <button class="btn btn-custom-secondary btn-choice" value="goblin">Goblin</button>
+            <button class="btn btn-custom-secondary btn-choice" value="halfling">Halfling</button>
+            <button class="btn btn-custom-secondary btn-choice" value="ork">Ork</button>
+            <button class="btn btn-custom-secondary btn-choice" value="wolfkin">Wolfkin</button>
+        </div>
+    </div>
+    <script type="application/json" id="json">
+        {
+            "alderlander": "/api/oracle/kinNames/alderlander",
+            "aslene": "/api/oracle/kinNames/aslene",
+            "dwarf": "/api/oracle/kinNames/dwarf",
+            "elf": "/api/oracle/kinNames/elf",
+            "goblin": "/api/oracle/kinNames/goblin",
+            "halfling": "/api/oracle/kinNames/halfling",
+            "ork": "/api/oracle/kinNames/ork",
+            "wolfkin": "/api/oracle/kinNames/wolfkin"
+        }
+    </script>
+</dialog>
